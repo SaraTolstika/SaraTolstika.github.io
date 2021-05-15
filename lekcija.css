@@ -43,8 +43,8 @@ display:flex
 .square.y-axis:hover {
  animation-play-state: paused; }
 @keyframes y-axis-animation {
- from {transform: rotateX(30deg)}
- to {transform: rotateX(-30deg)}
+ from {transform: rotateY(30deg)}
+ to {transform: rotateY(-30deg)}
  from {background-color: yellow;}
  to {background-color: green;}
 
@@ -58,8 +58,8 @@ display:flex
 .square.z-axis:hover {
  animation-play-state: paused; }
 @keyframes z-axis-animation {
- from {transform: rotateX(30deg)}
- to {transform: rotateX(-30deg)}
+ from {transform: rotateZ(30deg)}
+ to {transform: rotateZ(-30deg)}
  from {background-color: blue;}
  to {background-color: red;}
 
