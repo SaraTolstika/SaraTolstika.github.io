@@ -1,5 +1,5 @@
 
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Esmu gatava piedalīties šajā aizraujošajā programmēšanas ceļojumā ";
+  document.getElementById("demo").innerHTML = "Tad jau redzēs, kas sanāks ;) ";
   document.getElementById("poga").innerHTML = "...";
 }
