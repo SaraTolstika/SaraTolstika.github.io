@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="sara.css">
+<script src="sara.js"></script>
+<link rel="stylesheet" href="lekcija.css">
+
+
+<title>Sāras lapa</title>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+	
+	<!-- https://developers.google.com/maps/documentation/javascript/styling  mapTypeId: 'hybrid', -->
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 57.132639, lng: 23.474591 },
+		  
+          zoom: 11,
+		  mapId: '138279c12c63d0d5'
+        });
+		map.setTilt(45);
+      }
+    </script>
+
+</head>
+
+
+<body leftmargin = "100">
+
+<hr width = 700 size = 3 align = "center" color = black>
+
+<h1> <b> Sveiki!:) </b> </h1>
+
+<hr width = 700 size = 3 align = "center" color = black>
+
+<br> </br>
+
+<p>Es esmu Sāra.</p>
+<p id="demo"> Te es mācos programmēt ....</p>
+<button id="poga" type="button" onclick="myFunction()">Programmēt ir aizraujoši :D </button>
+
+<div>
+<div class=" scene">
+ <div class=" square x-axis">yeeeyy</div>
+ </div>
+ <div class=" scene">
+ <div class=" square x-axis">man</div>
+ </div>
+ <div class=" scene">
+ <div class=" square x-axis">izdevās</div>
+ </div>
+ </div>
+ 
+ <div>
+<div class=" scene">
+ <div class=" square y-axis">kaut</div>
+ </div>
+ <div class=" scene">
+ <div class=" square y-axis">kas</div>
+ </div>
+ <div class=" scene">
+ <div class=" square y-axis">jauns !</div>
+ </div>
+ </div>
+ 
+ <div>
+<div class=" scene">
+ <div class=" square z-axis"></div>
+ </div>
+ <div class=" scene">
+ <div class=" square z-axis"></div>
+ </div>
+ <div class=" scene">
+ <div class=" square z-axis"></div>
+ </div>
+ </div>
+ 
+ <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0muCEV_a3w5E2YAKBc6C-mXuMzH8eM14&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+ 
+</body>
+
+</html>
