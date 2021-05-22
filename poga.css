@@ -48,7 +48,7 @@
 }
 
 .button--janus::after {
-	content: '';
+	content: 'OHO';
 	height: 86%;
 	width: 97%;
 	top: 5%;
