@@ -8,6 +8,10 @@
 <link rel="stylesheet" href="lekcija.css">
 <link rel="stylesheet" href="poga.css" >
 
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
 <title>Sāras lapa</title>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -64,6 +68,28 @@
 					<button id="poga" type="button" class="button button--janus" onclick="myFunction()"><span>Poga :D</span></button>
 				</li>
 
+<p> Ziņojumi </p>
+ <body onload= "ieladet()">
+		
+		<div id="saraksts"> </div>
+		
+
+		<script>
+			function ieladet(){
+
+
+				$("#saraksts").empty();	
+
+		 $.getJSON("https://etech.mocklab.io/sludinajumi", function(result){
+		   $.each(result, function(i, field){
+			 $("#saraksts").append("Vards: " + field.sender + " " +  " "  + field.phone + " " + field.message + "<br />");
+		   });
+		 });
+	   };
+				</script>
+
+
+
 
 <div>
 <div class=" scene">
@@ -101,6 +127,8 @@
  </div>
  </div>
  
+
+ 
  <br> &nbsp </br>
   <br> &nbsp </br>
  
@@ -122,3 +150,4 @@
 </body>
 
 </html>
+
