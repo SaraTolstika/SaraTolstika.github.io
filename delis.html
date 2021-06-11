@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel="stylesheet" href="test.css">
+  
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <title>Results</title>
+		
+			
+	
+	</head>
+	
+	
+  <body onload= "ieladet()" leftmargin = "100">
+    <hr width = 700 size = 3 align = "center" color = black>
+<h1 align = "center"> <b>Ziņojumu dēlis</b></h1>
+<hr width = 700 size = 3 align = "center" color = black>
+
+
+
+</div id="results"> </div>
+<a href = "C:\Users\leila\Desktop\delis2\form.html" > <h3>Atpakaļ uz formu</h3></a>
+<script> 
+const resultsList = document.getElementById('results') 
+new URLSearchParams(window.location.search).forEach((value, 
+name) => {
+  resultsList.append(`$(name): $(value)`)
+  resultsList.append(document.createElement(`br`))
+})
+</script>
+
+<div>
+  <div id="saraksts"> </div>
+  
+
+  <script>
+    function ieladet(){
+
+
+      $("#saraksts").empty();	
+
+   $.getJSON("https://etech.mocklab.io/sludinajumi", function(result){
+     $.each(result, function(i, field){
+     $("#saraksts").append("Vards: " + field.sender + " " +  " "  + field.phone + " " + field.message + "<br />");
+     });
+   });
+   };
+      </script>
+      
+      </div>
+
+	</body>
+
+			
+</html>

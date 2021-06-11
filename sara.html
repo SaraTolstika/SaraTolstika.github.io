@@ -46,7 +46,23 @@
 		map.setTilt(45);
       }
     </script>
-
+<style>
+  .forma2{
+			width: 30%;
+			background-color: #4CAF50;
+			color: rgb(248, 244, 244);
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+      font-size: larger;
+		  }
+		  .forma2:hover {
+			background-color: #f10e0e;
+      color:black;
+		  }
+</style>
 </head>
 
 
@@ -69,7 +85,15 @@
 				</li>
 
 <p> Ziņojumi </p>
- <body onload= "ieladet()">
+
+<form class="slud" action="form.html" method="GET">
+    <div>
+      <button class="forma2" > Uzspied, lai aizpildītu formu </button>
+    </div>
+  </form>
+</form>
+
+ <body onload = "ieladet()">
 		
 		<div id="saraksts"> </div>
 		

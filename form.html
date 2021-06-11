@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Form</title>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+
+		<link rel="stylesheet" href="form.css">
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		body {
+    background-color: aquamarine;
+}
+		input:not(.radio, .color, #file), select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid rgb(12, 255, 81);
+			border-radius: 4px;
+			box-sizing: border-box;
+		  }
+		  input[type=color]{
+			  width: 90px;
+			  height:50px;
+		  }
+		   textarea {
+			width: 100%;
+			padding: 5px 15px;
+			border: 1px solid rgb(12, 255, 81);
+			border-radius: 4px;
+			resize: vertical;
+		  }
+		  	 label:not(.var){
+				  font-weight: bold;
+			  }
+			  
+		  
+		  button[type=submit] {
+			width: 30%;
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		  }
+		  button[type=submit]:hover {
+			background-color: #1f32e2;
+		  }
+		  button[type=reset]:hover {
+			background-color: #e5f50a;
+		  }
+		  button[type=reset] {
+			width: 30%;
+			background-color: #f36c13;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		  }
+		.poga{
+			width:100%;
+			background-color: #bf13f3;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: larger;
+		}
+		.poga:hover {
+			background-color: #5bd813;
+		  }
+		 
+		  input {
+			  width: 100%;
+			  
+		  }
+		  form {
+			width: 500px;
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		  }
+		  .shortcut{
+			width: 200px;
+			border-radius: 5px;
+			background-color:aquamarine;
+			padding: 20px;
+		  }
+		  
+		 p{
+			 font-family: Arial, Helvetica, sans-serif;
+			 font-size: larger;
+		 }
+	</style>
+		
+	</head>
+	
+	
+<body leftmargin = "100" >
+
+	<p>Pievieno sludinājumu</p>
+	
+<form action="delis.html" method="POST" enctype="multipart/form-data">
+
+<div>
+<label for="name" > Vārds </label>
+<input type = "text" name="name" id = "name" placeholder= "vārds..." required >
+</div>
+
+<div>
+	<label for = "email">E-pasts</label>
+	<input type= "email" name = "email" id = "email" placeholder="epasts..." required>
+</div>
+
+<div>
+<label for = "password"> Parole </label>
+<input type = "password" name="password" id = "password" placeholder="parole..." required>
+</div>
+
+<div>
+	<label for = "age">Age</label>
+	<input type= "number" name = "age" id="age" min = "1" max = "150" step = "1" placeholder="vecums...">
+
+</div>
+
+<div>
+	<label for = "date">Dzimšanas gads</label>
+	<input type = "date" name = "date" id = "date" min= "1971-01-01" max="2021-01-01" >
+</div>
+<div>
+	<b>Ciems:</b>
+	<div>
+		<label class = "var" for="Engure"">Engure</label>
+		<input type = "checkbox" name="Engure" id="Engure">
+	</div>
+	<div>
+		<label class="var" for="Ķesterciems">Ķesterciems</label>
+		<input type = "checkbox" name="Ķesterciems" id="Ķesterciems">
+	</div>
+	<div>
+		<label class="var" for="Apsuciems">Apsuciems</label>
+		<input type = "checkbox" name="Apsuciems" id="Apsuciems">
+	</div>
+</div>
+<div>
+	<b>Dzimums:</b>
+	<div>
+		<label class="var" for = "male">Vīrietis</label>
+		<input class="radio" type ="radio" name ="gender" id="male" value ="male">
+	</div>
+	
+	<div>
+		<label class="var" for = "female">Sieviete</label>
+		<input class="radio" type ="radio" name ="gender" id="female" value ="female">
+	</div>
+</div>
+
+
+<div>
+	<label for = "eyecolor" id = "eyecolor">Acu krāsa</label>
+	<select> 
+		<option value = "Green"> Green</option>
+		<option value = "brown"> brown</option>
+		<option value = "blue"> blue</option>
+	</select>
+</div>
+
+<div>
+	<label for="bio" >Ziņojums/ Sludinājums</label>
+<textarea id = "bio" name="bio" required placeholder="Šeit ierakti ziņojumu..."></textarea>
+</div>
+
+<input type = "hidden" name = "hidden" value = "hi">
+<div>
+	<label for="file">Vari pievienot failu</label>
+<input id="file" type="file" name= "file">
+</div> 
+
+<div> 
+	<label for ="phone">Telefona numurs</label>
+	<input type = "tel" name="phone" id="phone">
+</div>
+<div>
+	<label for="url">URL</label>
+	<input type ="url" name="url" id="url">
+ </div>
+
+<div>
+	<label for="color">Color</label>
+	<input class="color" type="color" name="color" id="color">
+</div>
+
+<button type = "reset">Reset</button>
+<button type = "submit"> Submit </button>
+
+
+</form>
+
+<br> &nbsp </br>
+
+
+ <p> Ja nevēlies ievietot sludinājumu, bet tikai apskatīt citus ziņojumus, nospiediet zemāk esoso pogu.</p>
+<form class="shortcut" action ="delis.html" method = "GET">
+	<div>
+		<button class="poga" > Ievietotie sludinājumi </button>
+	</div>
+</form>
+	
+	</body>
+
+			
+</html>
