@@ -7,9 +7,16 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			
-
-		<link rel="stylesheet" href="form.css">
 	<style>
+		input[type=file]{
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #f2f2f2;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
 		*{
 			box-sizing: border-box;
 		}
@@ -41,7 +48,7 @@
 			  }
 			  
 		  
-		  button[type=submit] {
+		  .slud {
 			width: 30%;
 			background-color: #4CAF50;
 			color: white;
@@ -51,7 +58,7 @@
 			border-radius: 4px;
 			cursor: pointer;
 		  }
-		  button[type=submit]:hover {
+		  .slud:hover {
 			background-color: #1f32e2;
 		  }
 		  button[type=reset]:hover {
@@ -119,6 +126,7 @@
 			background-color: #6813d8;
 		  }
 		 
+		  
 		 p{
 			 font-family: Arial, Helvetica, sans-serif;
 			 font-size: larger;
@@ -129,27 +137,35 @@
 	
 	
 <body leftmargin = "100" >
-
-
 	<p> Ja nevēlies ievietot sludinājumu, bet tikai apskatīt citus ziņojumus, nospiediet zemāk esoso pogu.</p>
-<form class="shortcut" action ="delis.html" method = "GET">
-	<div>
-		<button class="poga" > Ievietotie sludinājumi </button>
-	</div>
-</form>
-</form>
-<p> Lai atgrieztos uz sakumu, nospiest zemāk esošo pogu.</p>
-<form class="kategorijas" action ="sara.html" method = "POST">
-	<div>
-		<button class="kateg" > Atpakaļ uz sākumu </button>
-	</div>
-</form>
-<br> &nbsp </br>
-
-
+	<form class="shortcut" action ="delis.html" method = "GET">
+		<div>
+			<button class="poga" > Ievietotie sludinājumi </button>
+		</div>
+	</form>
+	<p> Lai atgrieztos uz kategorijām, nospiest zemāk esošo pogu.</p>
+	<form class="kategorijas" action ="zdelis.html" method = "POST">
+		<div>
+			<button class="kateg" > Atpakaļ uz kategorijām </button>
+		</div>
+	</form>
+	
 	<p>Pievieno sludinājumu</p>
 	
-<form action="delis.html" method="POST" enctype="multipart/form-data">
+<form action="delis.html" method="GET" enctype="multipart/form-data">
+
+	<div>
+		<label for = "eyecolor" id = "eyecolor">Kategorija</label>
+		<select> 
+			<option value = "pardod"> Pārdod</option>
+			<option value = "perk"> Pērk</option>
+			<option value = "maina"> Maina</option>
+			<option value = "mekle"> Meklē</option>
+			<option value = "atrada"> Atrada</option>
+			<option value = "piedava"> Piedāvā</option>
+		</select>
+	</div>
+	
 
 <div>
 <label for="name" > Vārds </label>
@@ -157,14 +173,23 @@
 </div>
 
 <div>
+	<label for="lname" > Uzvārds </label>
+	<input type = "text" name="lname" id = "lname" placeholder= "uzvārds..." required >
+	</div>
+
+<div>
 	<label for = "email">E-pasts</label>
 	<input type= "email" name = "email" id = "email" placeholder="epasts..." required>
 </div>
 
-<div>
-<label for = "password"> Parole </label>
-<input type = "password" name="password" id = "password" placeholder="parole..." required>
+<div> 
+	<label for ="phone">Telefona numurs</label>
+	<input type = "tel" name="phone" id="phone" placeholder="+371...">
 </div>
+<div>
+	<label for="url">URL, ja tāds ir</label>
+	<input type ="url" name="url" id="url" placeholder="https://www....">
+ </div>
 
 <div>
 	<label for = "age">Age</label>
@@ -205,47 +230,64 @@
 </div>
 
 
-<div>
-	<label for = "eyecolor" id = "eyecolor">Acu krāsa</label>
-	<select> 
-		<option value = "Green"> Green</option>
-		<option value = "brown"> brown</option>
-		<option value = "blue"> blue</option>
-	</select>
-</div>
 
 <div>
-	<label for="bio" >Ziņojums/ Sludinājums</label>
+	<label for="bio" >Ziņojums/ Sludinājums:</label>
 <textarea id = "bio" name="bio" required placeholder="Šeit ierakti ziņojumu..."></textarea>
 </div>
 
-<input type = "hidden" name = "hidden" value = "hi">
 <div>
 	<label for="file">Vari pievienot failu</label>
 <input id="file" type="file" name= "file">
 </div> 
 
-<div> 
-	<label for ="phone">Telefona numurs</label>
-	<input type = "tel" name="phone" id="phone">
-</div>
-<div>
-	<label for="url">URL</label>
-	<input type ="url" name="url" id="url">
- </div>
+
 
 <div>
-	<label for="color">Color</label>
+	<label for="color">Color :)</label>
 	<input class="color" type="color" name="color" id="color">
 </div>
 
 <button type = "reset">Reset</button>
-<button type = "submit"> Submit </button>
+
+	<button class="slud" onclick="postsludinajums()">Submit </button>
+
+  
+		<div>
+		<div id="postsludinajums"> </div>
+		<script>
+		  // Attach a submit handler to the form
+		  function postsludinajums() {
+		  
+		   
+			// Get some values from elements on the page:
+			//var $form = $( this ),
+			  //term = $form.find( "input[name='s']" ).val(),
+			  //url = $form.attr( "action" );
+		   
+			// Send the data using post
+			var posting = $.post( "https://etech.mocklab.io/sludinajums", { s: "" } );
+		   
+			// Put the results in a div
+			posting.done(function( data ) {
+			  var content = $( data ).find( "#content" );
+			  $( "#result" ).empty().append( content );
+			});
+		  };
+		  </script>
+			  
+			  </div>
+  
+  
+		
+
 
 
 </form>
 
-	
+		
+
+ 
 	</body>
 
 			
