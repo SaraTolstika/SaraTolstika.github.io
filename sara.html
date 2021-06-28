@@ -106,7 +106,7 @@
 
 		 $.getJSON("https://etech.mocklab.io/sludinajumi", function(result){
 		   $.each(result, function(i, field){
-			 $("#saraksts").append("Vards: " + field.sender + " " +  " "  + field.phone + " " + field.message + "<br />");
+        $("#saraksts").append("Vards: " + field.sender + " " +  " " + "<br />" + field.phone + " " + "<br />" + field.message + "<br />" + "<br />");
 		   });
 		 });
 	   };
